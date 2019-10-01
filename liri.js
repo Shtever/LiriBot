@@ -1,5 +1,9 @@
+require("dotenv").config();
+var keys = require("./keys.js");
+var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
 var inquirer = require("inquirer");
+
 
 
 //=======USER PROMPTS=============//
@@ -48,12 +52,20 @@ inquirer.prompt([
                             function movieGet() {
                                 axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy")
                                     .then(function (response) {
-                                        console.log(response.data);
+                                        console.log("Title: " + response.data.Title);
+                                        console.log("Year: " + response.data.Year);
+                                        console.log("IMDB Rating: " + response.data.Ratings[0].Value);
+                                        console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+                                        console.log("Country: " + response.data.Country);
+                                        console.log("Language: " + response.data.Language);
+                                        console.log("Plot: " + response.data.Plot);
+                                        console.log("Stars: " + response.data.Actors);
                                     });
                             }
                         })
                     break;
             }
+        } else {
             console.log("Well try again when you're a little more decisive.")
         }
     });
