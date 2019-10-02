@@ -48,16 +48,10 @@ inquirer.prompt([
                                         console.log("Title: " + respMus.tracks.items[0].name);
                                         console.log("Album: " + respMus.tracks.items[0].album.name);
                                         console.log("Preview: " + respMus.tracks.items[0].preview_url);
-
-                                        
                                     })
                                     .catch(function (err) {
                                         console.log(err);
-                                    }
-
-
-
-                                    );
+                                    });
                                 // console.log(respMus.data.tracks);
                                 // console.log(respMus.data.tracks);
                                 // console.log(respMus.data.tracks);
