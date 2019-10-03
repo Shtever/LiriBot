@@ -17,7 +17,7 @@ switch (process.argv[2]) {
         var songTitle = process.argv[3];
         songGet();
 
-        //============== BUILD FUNCTION =============//
+        //============== Song Get FUNCTION =============//
         function songGet() {
             if (!songTitle) {
                 songTitle = "The Sign";
@@ -33,7 +33,7 @@ switch (process.argv[2]) {
                     })
             }
         };
-//=================
+//================= Function for Ace of Base==================//
         function ace() {
             spotify
                 .search({ type: 'track', query: songTitle })
@@ -50,7 +50,7 @@ switch (process.argv[2]) {
 break;
     //==========================CONCERT==================//
     case "concert-this":
-        console.log("CONCERT SELECTED");
+        console.log((chalk.red.bold("CONCERT SELECTED")));
         var bandName = process.argv[3];
         concertGet();
 
@@ -109,10 +109,10 @@ break;
         break;
     //==============================DEFAULT======================== //
     default:
-        console.log(
+        console.log(chalk.greenBright.bold(
             "Please enter a command in the following formats" +
-            (chalk.magentaBright.bold("\n spotify-this-song '[SONG NAME]'" +
-                "\n concert-this '[BAND NAME]'" +
-                "\n movie-this '[MOVIE NAME]'" +
-                "\n do-what-it-says")));
+            (chalk.magentaBright("\n      spotify-this-song '[SONG NAME]'" +
+                "\n      concert-this '[BAND NAME]'" +
+                "\n      movie-this '[MOVIE NAME]'" +
+                "\n      do-what-it-says"))));
 }
