@@ -4,6 +4,7 @@ var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
 var inquirer = require("inquirer");
+var moment = require('moment');
 
 
 
@@ -60,6 +61,37 @@ inquirer.prompt([
                             }
                         })
                     break;
+                //==========================CONCERT==================//
+                case "Concerts":
+                    console.log("CONCERTS SELECTED");
+                    var bandName = "";
+                    inquirer.prompt([
+                        {
+                            type: "input",
+                            name: "bandResp",
+                            message: "Please enter the name of a artist or group",
+                        }
+                    ])
+                        .then(function (responseBand) {
+                            bandName = responseBand.bandResp
+                            concertGet();
+
+                            function concertGet() {
+                                var URL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp"
+                                axios.get(URL)
+                                    .then(function (concertResult) {
+                                        for (var i = 0; i < 10; i++) {
+                                            // console.log("\n" + concertResult.data[i].datetime);
+                                            console.log(concertResult.data[i].venue.name);
+                                            console.log(concertResult.data[i].venue.city + ", " + concertResult.data[i].venue.region);
+                                            console.log("\n" + moment(concertResult.data[i].datetime).format('L'));
+                                        }
+                                    })
+                            }
+                        });
+                    break;
+
+
 
                 // =========================MOVIE====================== //
                 case "A Movie":
@@ -72,8 +104,8 @@ inquirer.prompt([
                             message: "Which movie would you like information about?",
                         }
                     ])
-                        .then(function (response2) {
-                            movieTitle = response2.movie
+                        .then(function (responseMovie) {
+                            movieTitle = responseMovie.movie
                             movieGet();
 
                             function movieGet() {
