@@ -98,7 +98,13 @@ break;
             if (error) {
                 console.log(error);
             }
-            console.log(data);
+            // console.log(data);
+            var dataArr = data.split(",");
+            // console.log(dataArr);
+            process.argv[2] = dataArr[0];
+            songTitle = dataArr[1];
+            songGet();
+            
         })
         break;
     //==============================DEFAULT======================== //
