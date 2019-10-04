@@ -23,17 +23,17 @@ switch (process.argv[2]) {
                 songTitle = "The Sign";
                 ace();
             } else {
-                spotify
-                    .search({ type: 'track', query: songTitle })
+                spotify.search({ type: 'track', query: songTitle })
                     .then(function (respMus) {
                         console.log((chalk.magentaBright.bold("Artist: ")) + respMus.tracks.items[0].artists[0].name);
                         console.log((chalk.magentaBright.bold("Title: ")) + respMus.tracks.items[0].name);
                         console.log((chalk.magentaBright.bold("Album: ")) + respMus.tracks.items[0].album.name);
                         console.log((chalk.magentaBright.bold("Preview: ")) + respMus.tracks.items[0].preview_url);
+                        console.log("\n");
                     })
             }
         };
-//================= Function for Ace of Base==================//
+        //================= Function for Ace of Base==================//
         function ace() {
             spotify
                 .search({ type: 'track', query: songTitle })
@@ -43,11 +43,11 @@ switch (process.argv[2]) {
                     console.log((chalk.magentaBright.bold("Album: ")) + respMus.tracks.items[5].album.name);
                     console.log((chalk.magentaBright.bold("Preview: ")) + respMus.tracks.items[5].preview_url);
                 })
-                }
+        }
 
-            
 
-break;
+
+        break;
     //==========================CONCERT==================//
     case "concert-this":
         console.log((chalk.red.bold("CONCERT SELECTED")));
@@ -104,7 +104,7 @@ break;
             process.argv[2] = dataArr[0];
             songTitle = dataArr[1];
             songGet();
-            
+
         })
         break;
     //==============================DEFAULT======================== //
