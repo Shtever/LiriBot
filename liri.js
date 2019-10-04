@@ -44,9 +44,6 @@ switch (process.argv[2]) {
                     console.log((chalk.magentaBright.bold("Preview: ")) + respMus.tracks.items[5].preview_url);
                 })
         }
-
-
-
         break;
     //==========================CONCERT==================//
     case "concert-this":
