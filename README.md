@@ -67,8 +67,6 @@ LIRI Bot can give you information about a whole array of 3 subjects!
  ![Specified Movie](./assets/node6.gif)
 
 
-
-
  ## What if I don't want to type these commands over and over again?
 Simply open the random.txt and fill in one of the commands you'll be using in the format:
 - [command],'search term'
@@ -80,6 +78,8 @@ Run **node liri.js do-what-it-says** in the terminal to run the command from the
  ![Do What It Says](./assets/node7.gif)
 
 
+###  Here's a  link to view a video of the developer using the LIRI Bot:
+## [***Video Demo***](https://drive.google.com/file/d/15O6cB1r50-oq5Neu_qAgPJhlUQIVG2Fj/view?usp=sharing)
 
 ## You're ready to use your LIRI Bot!
 ### The world is yours! Good luck!
