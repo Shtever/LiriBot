@@ -19,6 +19,11 @@ switch (process.argv[2]) {
 
         //============== Song Get FUNCTION =============//
         function songGet() {
+            fs.appendFile("log.txt", "\n" + process.argv[2] + " " + process.argv[3], function(err){
+                if(err) {
+                    return console.log(err)
+                }
+            });
             if (!songTitle) {
                 songTitle = "The Sign";
                 ace();
@@ -52,6 +57,11 @@ switch (process.argv[2]) {
         concertGet();
 
         function concertGet() {
+            fs.appendFile("log.txt", "\n" +  process.argv[2] + " " + process.argv[3], function(err){
+                if(err) {
+                    return console.log(err)
+                }
+            });
             var URL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp"
             axios.get(URL)
                 .then(function (concertResult) {
@@ -72,6 +82,11 @@ switch (process.argv[2]) {
         movieGet();
 
         function movieGet() {
+            fs.appendFile("log.txt", "\n" +  process.argv[2] + " " + process.argv[3], function(err){
+                if(err) {
+                    return console.log(err)
+                }
+            });
             if (!movieTitle) {
                 movieTitle = "Mr. Nobody";
             }
