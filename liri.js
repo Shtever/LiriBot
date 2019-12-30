@@ -123,8 +123,8 @@ switch (process.argv[2]) {
     default:
         console.log(chalk.greenBright.bold(
             "Please enter a command in the following formats" +
-            (chalk.magentaBright("\n      spotify-this-song '[SONG NAME]'" +
-                "\n      concert-this '[BAND NAME]'" +
-                "\n      movie-this '[MOVIE NAME]'" +
-                "\n      do-what-it-says"))));
+            (chalk.magentaBright("\n      node liri.js spotify-this-song '[SONG NAME]'" +
+                "\n      node liri.js concert-this '[BAND NAME]'" +
+                "\n      node liri.js movie-this '[MOVIE NAME]'" +
+                "\n      node liri.js do-what-it-says"))));
 }
